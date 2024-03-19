@@ -128,7 +128,7 @@ const DetectionScreen = () => {
     //     </div>
     // );
     return(
-      <div>
+      <div className="main">
         < FileUplode />
       </div>
     );
