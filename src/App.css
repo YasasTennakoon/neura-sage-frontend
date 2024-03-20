@@ -1,6 +1,7 @@
 .main{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 30px;
@@ -20,8 +21,13 @@
   align-items: center;
   justify-content: center;
 }
+.patient-details-container{
+  padding-top: 20px !important;
+  padding: 10px;
+}
+
 .form-lables{
-  font-size: 14px;
+  font-size: 13px;
 }
 .card-custom-border {
   top: 10px;
@@ -36,7 +42,7 @@
   border-width: 2px !important; 
   box-shadow: 1px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 568px;
+  width: 561px;
   height: 379px !important;
 }
 
@@ -44,9 +50,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
-  width: 400px;
+  height: 318px;
+  width: 504px;
   border: 3px dashed rgb(0, 0, 0);
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: gainsboro;
+}
+
+.recent-card-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 141px;
+  width: 558px;
   padding: 2rem;
   border-radius: 10px;
   background-color: gainsboro;
@@ -58,8 +75,8 @@
 
 .image{
 border-radius: 10px;
-height: 290px;
-width: 390px;
+height: 300px;
+width: 490px;
 }
 
 .recent-uplode-container{
@@ -82,7 +99,7 @@ width: 390px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 8rem;
+  padding-left: 4rem;
 }
 
 .save-icon{
@@ -110,6 +127,7 @@ width: 60px;
 }
 .after-uplode-btn{
   padding: 5px;
+  padding-top: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -150,20 +168,21 @@ width: 60px;
 
 .file-name{
   font-size: 12px;
+  font-weight: bold;
 }
 .progress-bar{
-  width:15rem
+  width:460px;
 }
 
 .uploding-card{
   padding: 8px;
-  width: 342px;
+  width: 35rem;
   height: 75px !important;
 }
 
 .recent-uploding-card{
   padding: 8px;
-  width: 342px;
+  width: 275px;
   height: 75px !important;
 }
 
@@ -179,6 +198,47 @@ width: 60px;
 }
 
 .small-input {
-  height: 30px;
+  font-size: 12px !important;
+}
+
+.form-control-btn{
+  display: flex;
+  padding-top: 31px;
+  flex-direction: row-reverse;
+}
+
+.proceed-btn{
+  padding-right: 25px;
+}
+
+.flex-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  width: 584px;
+  max-height: 162px;
+  overflow-y: auto; 
+  padding-bottom: 10px;
+}
+
+.flex-card-expanded {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  width: 584px;
+  max-height: 257px;
+  overflow-y: auto;
+  padding-bottom: 10px;
+}
+
+.card-container {
+  flex-basis: calc(50% - 16px); 
+  flex-grow: 1;
+  max-width: calc(50% - 16px);
+}
+
+.form-control-btn-text{
   font-size: 12px !important;
 }
