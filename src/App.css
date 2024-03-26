@@ -4,10 +4,15 @@
   justify-content: center;
   padding-left: 30px;
   padding-right: 30px;
-  padding-top: 30px;
   padding-bottom: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  margin-left: 16rem;
+  overflow-y: auto;
+  padding-top: 41px;
 }
-
 .title{
   margin-top: 10px
 }
@@ -242,3 +247,281 @@ width: 60px;
 .form-control-btn-text{
   font-size: 12px !important;
 }
+
+/* SideNavBar.css this the code for the naviagtion abr */
+/* .side-nav {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #333;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.nav-items li {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.nav-items li:hover,
+.nav-items .active {
+  background: #1a1a1a;
+}
+
+.nav-items li svg {
+  margin-right: 10px;
+}
+
+.nav-footer {
+  padding: 20px;
+  background: #1a1a1a;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* ... rest of the styling for the switch ... */
+
+.logout {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logout svg {
+  margin-right: 10px;
+} 
+
+.side-nav {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  /* background: #333;
+  color: white; */
+  display: flex;
+  flex-direction: column;
+  background: #34495E; /* Dark Slate Blue/Gray */
+  color: #ECF0F1; /* Off White for text */
+}
+
+.nav-logo{
+  padding: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  background: teal;
+}
+
+.nav-item-icon {
+  margin-right: 10px; /* Spacing between icon and text */
+}
+
+.nav-footer {
+  margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+.nav-items li {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.nav-items svg {
+  margin-right: 10px;
+}
+
+.items{
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.nav-link.active {
+  background: #2980B9; 
+  color: #FFFFFF;
+}
+
+.nav-link:hover {
+  background: #5f99bf; 
+  color: #FFFFFF;
+}
+
+.nav-bar-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.nav-item-text{
+  font-size: 13px;
+  font-family: monospace;
+  font-weight: bold;
+  padding-left: 7px;
+}
+
+.nav-footer {
+  display: flex;
+  flex-direction: column;
+  background: teal;
+}
+.nav-footer-item{
+  color: white;
+}
+
+.nav-footer-item {
+  text-decoration: none;
+  background: teal; 
+  color: #FFFFFF;
+}
+
+.nav-footer-item:hover {
+  text-decoration: none;
+  background: #2980B9; 
+  color: #FFFFFF;
+}
+
+.pie-chart{
+  padding-bottom: 10px;
+}
+
+.final-decison-title{
+  font-size: 15px;
+  font-family: monospace;
+  font-weight: bold;
+  padding-bottom: 11px;
+}
+
+.final-decision{
+  font-size: 13px;
+  font-family: monospace;
+  padding-bottom: 11px;
+}
+
+.cognitive-card{
+  padding-right: 21px;
+}
+
+
+/*Quiz screen css*/
+
+.question-container {
+  padding: 10px;
+  border: 2px solid teal; 
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.question-container-tilte{
+  font-size: 20px;
+    font-weight: bold;
+    padding-top: 13px;
+}
+
+.question-heading{
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.question{
+  font-size: 15px;
+  font-weight:500;
+}
+
+.quiz-btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  padding: 15px;
+  gap:6px;
+}
+
+.next-btn{
+    width: 100px;
+    font-size: 12px !important;
+    font-weight: bold !important;
+}
+
+.quiz-question-number-title{
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+  background-color: teal;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: white;
+}
+
+.question-number-title-content{
+  display: flex;
+  justify-content: start;
+  gap:71px;
+  font-size: 13px;
+}
+
+.question-numbers{
+  background-color: teal !important;
+  color: white !important;
+  font-weight: bold !important;
+  border-color: teal !important;
+}
+
+.question-numbers-inactive{
+  background-color: transparent !important;
+  color: teal !important;
+  font-weight: bold !important;
+  border-color: teal !important;
+  font-size: 13px  !important;
+}
+
+
+.top-bar {
+  width: 100%;
+  background-color: teal; /* Replace with your desired color */
+  color: white;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional */
+  left: 250px;
+}
+
+.quiz-answer-input{
+  width: 30rem !important;
+  height: 3rem !important;
+  border: 1px solid teal !important;
+  font-size:12px !important;
+}
+
+.sample-text{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
+

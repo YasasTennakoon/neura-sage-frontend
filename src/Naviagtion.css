@@ -1,0 +1,53 @@
+/* SideNavBar.css */
+.side-nav {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #333;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-items li {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.nav-items li:hover,
+.nav-items .active {
+  background: #1a1a1a;
+}
+
+.nav-items li svg {
+  margin-right: 10px;
+}
+
+.nav-footer {
+  padding: 20px;
+  background: #1a1a1a;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* ... rest of the styling for the switch ... */
+
+.logout {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logout svg {
+  margin-right: 10px;
+}
