@@ -7,9 +7,8 @@ import Spinner from 'react-bootstrap/Spinner';
 import { MdDelete } from "react-icons/md";
 import { FaSave } from "react-icons/fa";
 import { useHistory, useLocation, useNavigate } from 'react-router-dom';
-import { IoIosHelpCircle } from "react-icons/io";
 
-const FileUpload = () => {
+const MRIUplode = () => {
     const [file, setFile] = useState();
     const [fileSizeKB, setFileSizeKB] = useState(null);
     const [image, setImage] = useState(null);
@@ -21,23 +20,6 @@ const FileUpload = () => {
     const [currentFileEvent, setCurrentFileEvent] = useState();
     const history = useNavigate();
     const location = useLocation();
-    const [formData, setFormData] = useState({
-        mf: '',
-        age: '',
-        ses: '',
-        mmse: '',
-        etiv: '',
-        nwbv: '',
-        asf: ''
-    });
-
-    const onformHandleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
 
     const handleDragOver = (event) => {
         event.preventDefault();
@@ -122,26 +104,16 @@ const FileUpload = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const outputData = {
-            "M/F": [parseInt(formData.mf)],
-            "Age": [parseInt(formData.age)],
-            "SES": [parseInt(formData.ses)],
-            "MMSE": [parseInt(formData.mmse)],
-            "eTIV": [parseInt(formData.etiv)],
-            "nWBV": [parseFloat(formData.nwbv)],
-            "ASF": [parseFloat(formData.asf)]
-        };
 
         const formDatas = new FormData();
         formDatas.append('image', file);
-        formDatas.append('patient', JSON.stringify(outputData));
 
         for (let [key, value] of formDatas.entries()) {
             console.log(key, value);
         }
 
         try {
-            const response = await fetch('http://127.0.0.1:5000/disease/diagnose', {
+            const response = await fetch('http://127.0.0.1:5000/disease/image/diagnosis', {
                 method: 'POST',
                 body: formDatas,
             });
@@ -151,8 +123,7 @@ const FileUpload = () => {
             }
 
             const data = await response.json();
-            history('/display_prediction', { state: { from: 'SourceComponent', message: data.diagnosis } });
-            console.log(data.diagnosis.combined_probs[0]);
+            history('/display_image_screen', { state: { from: 'SourceComponent', message: data.diagnosis } });
         } catch (error) {
             console.error('Error submitting form:', error);
         }
@@ -286,7 +257,6 @@ const FileUpload = () => {
                                                                 </div>
                                                                 <div className='d-flex flex-column p-2'>
                                                                     <div className='recent-file-name'>
-                                                                        {/* {item.target.files[0].name} */}
                                                                         {concatinateFileName(item.name)}
                                                                     </div>
                                                                     <div className='recent-file-size'>
@@ -308,192 +278,18 @@ const FileUpload = () => {
                                 </div>
                             </div>
 
-                            <div className='patient-details-container'>
-                                <Form>
-                                    <div className='patient-detail-title'>
-                                        Patient Personal Details
+                            <Col>
+                                <div className='form-control-btn'>
+                                    <div>
+                                        <Button variant="danger" size="mg">
+                                            <b className='form-control-btn-text'>Cancel</b>
+                                        </Button>
                                     </div>
-                                    <Row className='pt-2'>
-                                        <Col>
-                                            <Form.Group controlId="formGender">
-                                                <Form.Label className='form-lables'>Gender</Form.Label>
-                                                <Form.Control
-                                                    className='small-input'
-                                                    as="select"
-                                                    name="mf"
-                                                    value={formData.mf}
-                                                    onChange={onformHandleChange}
-                                                    defaultValue=""
-                                                >
-                                                    <option value="" disabled>Enter patient gender</option>
-                                                    <option value="1">Male</option>
-                                                    <option value="0">Female</option>
-                                                </Form.Control>
-                                            </Form.Group>
-                                        </Col>
-
-                                        <Col>
-                                            <Form.Group controlId="formGridFirstName">
-                                                <Form.Label className='form-lables'>Age</Form.Label>
-                                                <Form.Control
-                                                    className='small-input'
-                                                    type="number"
-                                                    name="age"
-                                                    value={formData.age}
-                                                    onChange={onformHandleChange}
-                                                    placeholder="Enter patient age"
-                                                />
-                                            </Form.Group>
-                                        </Col>
-                                    </Row>
-
-                                    <div className='pt-3 patient-detail-title'>
-                                        Clinical Information
+                                    <div className='proceed-btn'>
+                                        <Button variant="primary" size="mg"><b className='form-control-btn-text' onClick={handleSubmit}>Proceed</b></Button>
                                     </div>
-                                    <Row className='pt-2'>
-                                        <Col>
-                                            <Form.Group controlId="formGridFirstName">
-                                                <Form.Label className='form-lables'>Socioecomic Status</Form.Label>
-                                                <OverlayTrigger
-                                                    placement="right"
-                                                    delay={{ show: 250, hide: 400 }}
-                                                    overlay={<Tooltip id="button-tooltip" >
-                                                        Socioecomic Status
-                                                    </Tooltip>}
-                                                >
-                                                    <span style={{ cursor: 'pointer' }}>
-                                                        <IoIosHelpCircle />
-                                                    </span>
-                                                </OverlayTrigger>
-                                                <Form.Control
-                                                    className='small-input'
-                                                    type="number"
-                                                    name="ses"
-                                                    value={formData.ses}
-                                                    onChange={onformHandleChange}
-                                                    placeholder="SES"
-                                                />
-                                            </Form.Group>
-                                        </Col>
-                                        <Col>
-                                            <Form.Group controlId="formGridFirstName">
-                                                <Form.Label className='form-lables'>Mini-Mental State Examination</Form.Label>
-                                                <OverlayTrigger
-                                                    placement="right"
-                                                    delay={{ show: 250, hide: 400 }}
-                                                    overlay={<Tooltip id="button-tooltip" >
-                                                        Socioecomic Status
-                                                    </Tooltip>}
-                                                >
-                                                    <span style={{ cursor: 'pointer' }}>
-                                                        <IoIosHelpCircle />
-                                                    </span>
-                                                </OverlayTrigger>
-                                                <Form.Control
-                                                    className='small-input'
-                                                    type="number"
-                                                    name="mmse"
-                                                    value={formData.mmse}
-                                                    onChange={onformHandleChange}
-                                                    placeholder="MMSES"
-                                                />
-                                            </Form.Group>
-                                        </Col>
-                                    </Row>
-                                    <Row className='pt-2'>
-                                        <Col>
-                                            <Form.Group controlId="formGridFirstName">
-                                                <Form.Label className='form-lables'>Estimated Total Intracranial Volume</Form.Label>
-                                                <OverlayTrigger
-                                                    placement="right"
-                                                    delay={{ show: 250, hide: 400 }}
-                                                    overlay={<Tooltip id="button-tooltip" >
-                                                        Socioecomic Status
-                                                    </Tooltip>}
-                                                >
-                                                    <span style={{ cursor: 'pointer' }}>
-                                                        <IoIosHelpCircle />
-                                                    </span>
-                                                </OverlayTrigger>
-                                                <Form.Control
-                                                    className='small-input'
-                                                    type="number"
-                                                    name="etiv"
-                                                    value={formData.etiv}
-                                                    onChange={onformHandleChange}
-                                                    placeholder="eTIV"
-                                                />
-                                            </Form.Group>
-                                        </Col>
-                                        <Col>
-                                            <Form.Group controlId="formGridFirstName">
-                                                <Form.Label className='form-lables'>Normalized Whole Brain Volume</Form.Label>
-                                                <OverlayTrigger
-                                                    placement="right"
-                                                    delay={{ show: 250, hide: 400 }}
-                                                    overlay={<Tooltip id="button-tooltip" >
-                                                        Socioecomic Status
-                                                    </Tooltip>}
-                                                >
-                                                    <span style={{ cursor: 'pointer' }}>
-                                                        <IoIosHelpCircle />
-                                                    </span>
-                                                </OverlayTrigger>
-                                                <Form.Control
-                                                    className='small-input'
-                                                    type="number"
-                                                    name="nwbv"
-                                                    value={formData.nwbv}
-                                                    onChange={onformHandleChange}
-                                                    placeholder="NWBV"
-                                                />
-                                            </Form.Group>
-                                        </Col>
-                                    </Row>
-
-                                    <Row className='pt-2'>
-                                        <Col >
-                                            <Form.Group controlId="formGridFirstName">
-                                                <Form.Label className='form-lables'>Atlas Scaling Factor</Form.Label>
-                                                <OverlayTrigger
-                                                    placement="right"
-                                                    delay={{ show: 250, hide: 400 }}
-                                                    overlay={<Tooltip id="button-tooltip" >
-                                                        Socioecomic Status
-                                                        setUplodedImagessd
-                                                        setFormDatasd
-                                                        sdsd
-                                                    </Tooltip>}
-                                                >
-                                                    <span style={{ cursor: 'pointer' }}>
-                                                        <IoIosHelpCircle />
-                                                    </span>
-                                                </OverlayTrigger>
-                                                <Form.Control
-                                                    className='small-input'
-                                                    type="number"
-                                                    name="asf"
-                                                    value={formData.asf}
-                                                    onChange={onformHandleChange}
-                                                    placeholder="ASF"
-                                                />
-                                            </Form.Group>
-                                        </Col>
-                                        <Col>
-                                            <div className='form-control-btn'>
-                                                <div>
-                                                    <Button variant="danger" size="mg">
-                                                        <b className='form-control-btn-text'>Cancel</b>
-                                                    </Button>
-                                                </div>
-                                                <div className='proceed-btn'>
-                                                    <Button variant="primary" size="mg"><b className='form-control-btn-text' onClick={handleSubmit}>Proceed</b></Button>
-                                                </div>
-                                            </div>
-                                        </Col>
-                                    </Row>
-                                </Form>
-                            </div>
+                                </div>
+                            </Col>
                         </Card.Body>
                     </Card>
 
@@ -505,4 +301,4 @@ const FileUpload = () => {
     )
 };
 
-export default FileUpload;
+export default MRIUplode;

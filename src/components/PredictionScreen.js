@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import React from 'react';
 import Chart from 'react-apexcharts';
 import { Button, Card, Col, Form, ProgressBar, Row } from 'react-bootstrap';
@@ -11,55 +11,54 @@ const PredictionScreen = () => {
         name: 'Diagnosis',
         data: location.state?.message?.combined_probs[0] ? location.state?.message?.combined_probs[0] : []
     }]);
-
-    const [imageProbabilities, setImageProbabilities] = useState(location.state?.message?.combined_probs[0] ? location.state?.message?.combined_probs[0] : []);
+    const [imageProbabilities, setImageProbabilities] = useState(location.state?.message?.image_probs
+    [0] ? location.state?.message?.image_probs[0] : []);
     const [textualProbabilities, setTextualProbabilities] = useState(location.state?.message?.text_probs[0] ? location.state?.message?.text_probs[0] : []);
+    const highestProbability = location.state?.message?.combined_probs[0] ? Math.max(...location.state?.message?.combined_probs[0]) : 100;
+    const history = useNavigate();
 
 
     useEffect(() => {
         console.log(location.state?.message);
     });
 
-    const finalOutputGenerate = (finalDecision) =>{
-        switch(finalDecision){
+    const finalOutputGenerate = (finalDecision) => {
+        switch (finalDecision) {
             case 'Non Demented':
                 return "Healthy Brain";
             case 'Mild AD':
-                return "Mild Alzehimz Disease";    
+                return "Mild Alzehimz Disease";
             case 'Moderate AD':
                 return "Moderate Alzehimz Disease";
             case 'Very Mild AD':
-                return "Very Mild Alzehimz Disease";    
+                return "Very Mild Alzehimz Disease";
             default:
-                return "Error in Prediction";                        
+                return "Error in Prediction";
         }
     }
 
+    const onClickDiagnosis = () => {
+        history('/display_detection');
+    };
+
     let finalDecision = location.state?.message?.
-    final_decision ? finalOutputGenerate(location.state?.message?.
-        final_decision):"Error"
+        final_decision ? finalOutputGenerate(location.state?.message?.
+            final_decision) : "Error"
 
     const [options, setOptions] = useState({
         chart: {
             type: 'bar',
             height: 500,
         },
-        title: {
-            text: 'Patient Diagnosis Probabilities',
-            align: 'center', 
-            style: {
-                fontSize: '15px', 
-                fontWeight: 'bold', 
-                color: '#263238' 
-            }
-        },
         plotOptions: {
             bar: {
                 horizontal: false,
                 columnWidth: '70%',
-                endingShape: 'rounded'
+                endingShape: 'rounded',
+                distributed: true,
             },
         },
+        colors: ['#008FFB', '#00E396', '#FEB019', '#FF4560'],
         dataLabels: {
             enabled: false
         },
@@ -85,8 +84,18 @@ const PredictionScreen = () => {
                     return val + "%";
                 }
             }
-        }
+        },
+        title: {
+            text: 'Patient Diagnosis Probabilities',
+            align: 'center',
+            style: {
+                fontSize: '15px',
+                fontWeight: 'bold',
+                color: '#263238'
+            }
+        },
     });
+
 
     const [pieImageOptions, setPieImageOptions] = useState({
         chart: {
@@ -158,13 +167,11 @@ const PredictionScreen = () => {
 
     return (
         <div>
-            <div className="title">Disease Detection</div>
-        <Card style={{ width: '70rem' }} className='card-custom-border'>
             <div className="p-2">
                 <div className="d-flex flex-row">
-                    <div className="px-3">
+                    <div className="pe-3">
                         <Card className='card-custom-border'>
-                            <Chart options={options} series={combinedProbabilities} type="bar" height={500} width={650} />
+                            <Chart options={options} series={combinedProbabilities} type="bar" height={500} width={687} />
                         </Card>
                     </div>
 
@@ -180,21 +187,23 @@ const PredictionScreen = () => {
                         </Card>
                     </div>
                 </div>
-                <div className="d-flex flex-row">
-                    <div className="p-4">
-                        <div className="d-flex flex-column">
-                            <div className="final-decison-title">
-                                Disease Diagnosis
-                            </div>
-                            <div className="final-decision">
-                                {/* Based on the comprehensive analysis conduted for the patient yeilds that the patient yeilds a diagnosis of <span className="fw-bold">{finalDecision}</span> Alzehimz disease. */}
-                                After detailed evaluation through advanced imaging and text analysis, the data suggest a pronounced likelihood of <span className="fw-bold">{finalDecision}</span> (AD). The bar graph distinctly shows a high probability of <span className="fw-bold">{Math.max(...location.state?.message?.combined_probs[0])}</span>% for <span>{finalDecision}</span>, indicating a strong diagnostic leaning towards this category.
+                <div className="pt-3">
+                    <Card className='card-custom-border' style={{ height: '11.5rem' }}>
+                        <Card.Header className="text-center result-title">Disease Diagnosis</Card.Header>
+                        <div className="p-3">
+                            <div className="result-container-both">
+                                <div className="desease-detection-text">
+                                    After detailed evaluation through advanced imaging and text analysis, the data suggest a pronounced likelihood of <span className="fw-bold">{finalDecision}</span> (AD). The bar graph distinctly shows a high probability of <span className="fw-bold">{highestProbability}</span>% for <span>{finalDecision}</span>, indicating a strong diagnostic leaning towards this category.
+                                </div>
+                                <div className="result-btn">
+                                    <Button className="select-btn" onClick={()=>onClickDiagnosis()}>Diagnosis</Button>
+                                    <Button className="select-btn" variant="success">Print Diagnosis Report</Button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </Card>
                 </div>
             </div>
-        </Card>
         </div>
     );
 }

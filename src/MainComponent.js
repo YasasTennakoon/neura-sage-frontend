@@ -7,8 +7,11 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Home from "./components/Home";
 import CognitiveExamination from "./components/CognitiveExamination";
 import PredictionScreen from "./components/PredictionScreen";
+import DiseaseDetection from "./components/DiseaseDetection";
+import MRIUplode from "./components/MRIUplode";
+import ImagePredictionScreen from "./components/ImagePredictionScreen";
  
-const DetectionScreen = () => {
+const MainComponent = () => {
   return (
     <Router>
       <div className="main">
@@ -29,10 +32,13 @@ const DetectionScreen = () => {
           <Route path="/file-upload" element={<FileUplode />} />
           <Route path="/cognitive" element={<CognitiveExamination />} />
           <Route path="/display_prediction" element={<PredictionScreen />} />
+          <Route path="/display_detection" element={<DiseaseDetection />} />
+          <Route path="/mri_uplode" element={<MRIUplode />} />
+          <Route path="/display_image_screen" element={<ImagePredictionScreen />} />
         </Routes>
       </div>
     </Router>
   );
 }
  
-export default DetectionScreen;
+export default MainComponent;

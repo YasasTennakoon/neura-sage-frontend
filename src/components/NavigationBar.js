@@ -27,7 +27,7 @@ const NavigationBar = () => {
             </span>
           </NavLink>
 
-          <NavLink to="/file-upload" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')} activeClassName="active">
+          <NavLink to="/display_detection" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')} activeClassName="active">
             <span className='items'>
               <FaBrain size={20} />
               <span className='nav-item-text'>Disease Detection</span>
