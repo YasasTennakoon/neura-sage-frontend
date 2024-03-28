@@ -42,14 +42,14 @@ const NavigationBar = () => {
           </NavLink>
         </div>
         <div className="nav-footer">
-          <NavLink to="/help" className="nav-footer-item">
+          <NavLink className="nav-footer-item">
             <span className='items'>
               <IoIosHelpCircle size={20} />
               <span className='nav-item-text'>Help</span>
             </span>
           </NavLink>
 
-          <NavLink to="/logout" className="nav-footer-item">
+          <NavLink className="nav-footer-item">
             <span className='items'>
               <RiLogoutBoxRFill size={20} />
               <span className='nav-item-text'>LogOut</span>

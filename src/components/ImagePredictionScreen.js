@@ -13,9 +13,6 @@ const ImagePredictionScreen = () => {
         data: location.state?.message?.image_probs[0] ? location.state?.message?.image_probs[0] : []
     }]);
     const history = useNavigate();
-
-
-
     const finalOutputGenerate = (finalDecision) => {
         switch (finalDecision) {
             case 'Non Demented':
@@ -108,7 +105,7 @@ const ImagePredictionScreen = () => {
                                 After detailed evaluation through advanced imaging and text analysis, the data suggest a pronounced likelihood of <span className="fw-bold">{finalDecision}</span> (AD). The bar graph distinctly shows a high probability of <span className="fw-bold">{highestProbability}</span>% for <span>{finalDecision}</span>, indicating a strong diagnostic leaning towards this category.
                             </div>
                             <div className="result-btn">
-                                <Button className="select-btn" onClick={()=>onClickDiagnosis()}>Diagnosis</Button>
+                                <Button className="select-btn" onClick={() => onClickDiagnosis()}>Diagnosis</Button>
                                 <Button className="select-btn" variant="success">Print Diagnosis Report</Button>
                             </div>
                         </div>

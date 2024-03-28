@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-left: 30px;
+  padding-left: 34px;
   padding-right: 30px;
   padding-bottom: 30px;
   position: fixed;
@@ -93,7 +93,6 @@
   max-height: 143px;
   overflow-y: auto;
   background-color: gainsboro;
-  ;
   border-radius: 5px;
 }
 
@@ -269,19 +268,15 @@
 }
 
 .side-nav {
-  width: 250px;
+  width: 261px;
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
-  /* background: #333;
-  color: white; */
   display: flex;
   flex-direction: column;
   background: #34495E;
-  /* Dark Slate Blue/Gray */
   color: #ECF0F1;
-  /* Off White for text */
 }
 
 .nav-logo {
@@ -338,12 +333,10 @@
   padding-left: 10px;
   font-size: 30px;
   font-weight: bold;
-  font-family: monospace;
 }
 
 .nav-item-text {
   font-size: 13px;
-  font-family: monospace;
   font-weight: bold;
   padding-left: 7px;
 }
@@ -467,18 +460,22 @@
 
 
 .top-bar {
-  width: 100%;
+  width: calc(100% - 250px);
   background-color: teal;
   color: white;
   position: fixed;
   top: 0;
+  left: 261px; 
   z-index: 10;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center; 
+  align-items: center; 
   padding: 9px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  left: 250px;
+}
+
+.center-content {
+  text-align: center; 
 }
 
 .quiz-answer-input {
@@ -585,4 +582,64 @@
   display: flex;
   flex-direction: column;
   gap: 36px;
+}
+
+.tool-bar-title{
+  font-weight: bold;
+} 
+
+.home-container{
+  margin-left: -30px;
+  width: 1180px;
+}
+
+.home-content-conatiner{
+  display: flex;
+  flex-direction: row;
+  background-color: cadetblue;
+}
+
+.home-description{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: cadetblue;
+  color: white;
+  padding: 44px;
+}
+
+.home-text{
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.img-styling{
+  width: 43rem;
+  height: 30rem;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.learn-more{
+  width: 112px;
+    padding: 10px;
+    background-color: steelblue;
+    font-size: 14px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.about-disease-conatiner{
+  padding: 14px;
+}
+
+.about-title{
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 11px;
+}
+
+.disease-stage{
+  font-size: 18px;
+    font-weight: bold;
 }

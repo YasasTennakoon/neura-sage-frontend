@@ -358,7 +358,14 @@ const FileUpload = () => {
                                                     placement="right"
                                                     delay={{ show: 250, hide: 400 }}
                                                     overlay={<Tooltip id="button-tooltip" >
-                                                        Socioecomic Status
+                                                        <div className='d-flex flex-column'>
+                                                            <div style={{ textAlign: 'left', fontSize: '15px', fontWeight: 'bold' }}>
+                                                                <u>Socioecomic Status </u>
+                                                            </div>
+                                                            <div style={{ textAlign: 'left' }}>
+                                                                Measures social and economic standing for individuals or families within society.
+                                                            </div>
+                                                        </div>
                                                     </Tooltip>}
                                                 >
                                                     <span style={{ cursor: 'pointer' }}>
@@ -382,7 +389,14 @@ const FileUpload = () => {
                                                     placement="right"
                                                     delay={{ show: 250, hide: 400 }}
                                                     overlay={<Tooltip id="button-tooltip" >
-                                                        Socioecomic Status
+                                                        <div className='d-flex flex-column'>
+                                                            <div style={{ textAlign: 'left', fontSize: '15px', fontWeight: 'bold' }}>
+                                                                <u>Mini-Mental State Examination</u>
+                                                            </div>
+                                                            <div style={{ textAlign: 'left' }}>
+                                                                Screens for cognitive impairment by evaluating memory, attention, and language skills.
+                                                            </div>
+                                                        </div>
                                                     </Tooltip>}
                                                 >
                                                     <span style={{ cursor: 'pointer' }}>
@@ -408,7 +422,14 @@ const FileUpload = () => {
                                                     placement="right"
                                                     delay={{ show: 250, hide: 400 }}
                                                     overlay={<Tooltip id="button-tooltip" >
-                                                        Socioecomic Status
+                                                        <div className='d-flex flex-column'>
+                                                            <div style={{ textAlign: 'left', fontSize: '15px', fontWeight: 'bold' }}>
+                                                                <u>Estimated Total Intracranial Volume</u>
+                                                            </div>
+                                                            <div style={{ textAlign: 'left' }}>
+                                                                Estimates overall brain volume for neuroimaging analysis and comparisons.
+                                                            </div>
+                                                        </div>
                                                     </Tooltip>}
                                                 >
                                                     <span style={{ cursor: 'pointer' }}>
@@ -432,7 +453,14 @@ const FileUpload = () => {
                                                     placement="right"
                                                     delay={{ show: 250, hide: 400 }}
                                                     overlay={<Tooltip id="button-tooltip" >
-                                                        Socioecomic Status
+                                                        <div className='d-flex flex-column'>
+                                                            <div style={{ textAlign: 'left', fontSize: '15px', fontWeight: 'bold' }}>
+                                                                <u>Normalized Whole Brain Volume</u>
+                                                            </div>
+                                                            <div style={{ textAlign: 'left' }}>
+                                                                Quantifies brain volume relative to individual characteristics, aiding neurological studies.
+                                                            </div>
+                                                        </div>
                                                     </Tooltip>}
                                                 >
                                                     <span style={{ cursor: 'pointer' }}>
@@ -459,10 +487,14 @@ const FileUpload = () => {
                                                     placement="right"
                                                     delay={{ show: 250, hide: 400 }}
                                                     overlay={<Tooltip id="button-tooltip" >
-                                                        Socioecomic Status
-                                                        setUplodedImagessd
-                                                        setFormDatasd
-                                                        sdsd
+                                                        <div className='d-flex flex-column'>
+                                                            <div style={{ textAlign: 'left', fontSize: '15px', fontWeight: 'bold' }}>
+                                                                <u>Atlas Scaling Factor</u>
+                                                            </div>
+                                                            <div style={{ textAlign: 'left' }}>
+                                                                Adjusts brain image sizes to ensure accurate comparisons in neuroimaging research and analyses.
+                                                            </div>
+                                                        </div>
                                                     </Tooltip>}
                                                 >
                                                     <span style={{ cursor: 'pointer' }}>
