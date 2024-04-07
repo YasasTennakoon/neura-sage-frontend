@@ -18,6 +18,7 @@ const MRIUplode = () => {
     const [uplodedImages, setUplodedImages] = useState([]);
     const [currentUplodeStatus, setCurrentUplodeStatus] = useState(false);
     const [currentFileEvent, setCurrentFileEvent] = useState();
+    const [isPredicting, setIsPredicting] = useState(false);
     const history = useNavigate();
     const location = useLocation();
 
@@ -103,6 +104,7 @@ const MRIUplode = () => {
     }
 
     const handleSubmit = async (e) => {
+        setIsPredicting(true);
         e.preventDefault();
 
         const formDatas = new FormData();
@@ -132,6 +134,21 @@ const MRIUplode = () => {
 
     return (
         <div className='test'>
+            {isPredicting && (
+                <div style={{
+                    position: 'fixed',
+                    top: 0, left: 0,
+                    width: '100%', height: '100%',
+                    backgroundColor: 'rgba(0,0,0,0.5)',
+                    zIndex: 1050,
+                    display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'
+                }}>
+                    <Spinner animation="border" style={{ width: '3rem', height: '3rem', color: '#007bff' }} />
+                    <div style={{ marginTop: '20px', color: 'white', fontSize: '20px', fontWeight: 'bold' }}>
+                        Disease detecting...
+                    </div>
+                </div>
+            )}
             <div className='d-flex justify-content-start'>
                 <div>
                     <Card style={{ width: '70rem' }} className='card-custom-border'>
