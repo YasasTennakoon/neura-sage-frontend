@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, ButtonGroup, Card, Form } from 'react-boot
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useRef } from "react";
 import audio from './Rev.mp3';
-import image from './pencil.jpeg'
+import image from '././Images/pencil.jpeg'
 import { FaPlayCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -124,7 +124,7 @@ const CognitiveExamination = () => {
 
 
     return (
-        <div>
+        <div className="test">
             {quizStatus ? (
                 <div className="d-flex flex-row">
                     <div className="cognitive-card">

@@ -1,17 +1,10 @@
 .main {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  padding-left: 34px;
-  padding-right: 30px;
+  padding-left: 291px;
   padding-bottom: 30px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  margin-left: 16rem;
+  height: 100vh;
   overflow-y: auto;
-  padding-top: 41px;
 }
 
 .title {
@@ -213,6 +206,7 @@
 
 .small-input {
   font-size: 12px !important;
+  background-color: #dcdbdb !important;
 }
 
 .form-control-btn {
@@ -275,7 +269,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: #34495E;
+  background: #2e4493;
   color: #ECF0F1;
 }
 
@@ -284,7 +278,7 @@
   padding-bottom: 20px;
   display: flex;
   flex-direction: row;
-  background: teal;
+  background: #131a2f;
 }
 
 .nav-item-icon {
@@ -317,7 +311,7 @@
 }
 
 .nav-link.active {
-  background: #2980B9;
+  background: #293a6e;
   color: #FFFFFF;
 }
 
@@ -344,7 +338,6 @@
 .nav-footer {
   display: flex;
   flex-direction: column;
-  background: teal;
 }
 
 .nav-footer-item {
@@ -353,13 +346,13 @@
 
 .nav-footer-item {
   text-decoration: none;
-  background: teal;
+  background: #131a2f;
   color: #FFFFFF;
 }
 
 .nav-footer-item:hover {
   text-decoration: none;
-  background: #2980B9;
+  background: #5f99bf;
   color: #FFFFFF;
 }
 
@@ -389,7 +382,7 @@
 
 .question-container {
   padding: 10px;
-  border: 2px solid teal;
+  border: 2px solid #131a2f;
   border-radius: 10px;
   margin-bottom: 5px;
 }
@@ -430,7 +423,7 @@
   font-weight: bold;
   padding: 10px;
   width: 100%;
-  background-color: teal;
+  background-color: #131a2f;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   color: white;
@@ -444,44 +437,44 @@
 }
 
 .question-numbers {
-  background-color: teal !important;
+  background-color: #131a2f !important;
   color: white !important;
   font-weight: bold !important;
-  border-color: teal !important;
+  border-color: #131a2f !important;
 }
 
 .question-numbers-inactive {
   background-color: transparent !important;
-  color: teal !important;
+  color: #131a2f !important;
   font-weight: bold !important;
-  border-color: teal !important;
+  border-color: #131a2f !important;
   font-size: 13px !important;
 }
 
 
 .top-bar {
   width: calc(100% - 250px);
-  background-color: teal;
+  background-color: #131a2f;
   color: white;
   position: fixed;
   top: 0;
-  left: 261px; 
+  left: 261px;
   z-index: 10;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   padding: 9px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .center-content {
-  text-align: center; 
+  text-align: center;
 }
 
 .quiz-answer-input {
   width: 30rem !important;
   height: 3rem !important;
-  border: 1px solid teal !important;
+  border: 1px solid #131a2f !important;
   font-size: 12px !important;
 }
 
@@ -503,7 +496,7 @@
   border-radius: 10px;
   padding: 11px;
   margin-bottom: 9px;
-  border: 2px solid teal;
+  border: 2px solid #131a2f;
 }
 
 .mmse-score {
@@ -516,7 +509,7 @@
   border-radius: 10px;
   padding: 11px;
   margin-bottom: 9px;
-  border: 2px solid teal;
+  border: 2px solid #131a2f;
 }
 
 .correct-questions {
@@ -543,7 +536,7 @@
 .visual-exam-image {
   width: 100px;
   height: auto;
-  border: 2px solid teal;
+  border: 2px solid #131a2f;
   border-radius: 11px;
 }
 
@@ -553,7 +546,7 @@
 }
 
 .diagnosis-container {
-  border: 2px solid teal;
+  border: 2px solid #131a2f;
   border-radius: 6px;
   margin-top: 21px;
   width: 1101px;
@@ -566,7 +559,7 @@
 }
 
 .result-title {
-  background-color: teal !important;
+  background-color: #131a2f !important;
   color: white !important;
   font-size: 15px;
   font-weight: bold;
@@ -584,62 +577,133 @@
   gap: 36px;
 }
 
-.tool-bar-title{
+.tool-bar-title {
   font-weight: bold;
-} 
-
-.home-container{
-  margin-left: -30px;
-  width: 1180px;
 }
 
-.home-content-conatiner{
+.home-container {
+  margin-left: -30px;
+  width: 1300px;
+}
+
+.home-content-conatiner {
   display: flex;
   flex-direction: row;
-  background-color: cadetblue;
+  background-color: #405699;
 }
 
-.home-description{
+.home-description {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: cadetblue;
+  background-color: #405699;
   color: white;
   padding: 44px;
 }
 
-.home-text{
+.home-text {
   font-size: 36px;
   font-weight: bold;
 }
 
-.img-styling{
+.img-styling {
   width: 43rem;
   height: 30rem;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
 }
 
-.learn-more{
+.learn-more {
   width: 112px;
-    padding: 10px;
-    background-color: steelblue;
-    font-size: 14px;
-    border-radius: 5px;
-    font-weight: bold;
+  padding: 10px;
+  background-color: steelblue;
+  font-size: 14px;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 .about-disease-conatiner{
   padding: 14px;
 }
 
-.about-title{
+.about-title {
   font-weight: bold;
   font-size: 20px;
   padding-bottom: 11px;
 }
 
-.disease-stage{
+.disease-stage {
   font-size: 18px;
-    font-weight: bold;
+  font-weight: bold;
 }
+
+.test {
+  margin-left: 32px;
+}
+
+.disese-detect-card-gap {
+  padding-top: 80px;
+  gap: 5rem;
+}
+
+.disease-detection-conatiner {
+  position: relative;
+  background-image: url('././components/Images/Alzehimz.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 500px;
+  min-width: 500px;
+}
+
+.disease-detection-conatiner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 0;
+}
+
+
+.card-custom-border,
+.question-container-tilte,
+.desease-detection-text {
+  position: relative;
+  z-index: 1;
+}
+
+.card-body-detection-screen{
+  padding: 15px !important;
+  background-color: #405699 !important;
+  color: white !important;
+  border-radius: 5px !important;
+  height: 140px !important;
+}
+
+
+.card-body-description{
+  font-size: 12px !important;
+  font-weight: bold !important;
+}
+
+.card-body-btn{
+  padding-top: 5px !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+}
+
+.home-gap{
+  gap: 4rem;
+}
+
+.card-body-home-screen{
+  padding: 15px !important;
+  background-color: #405699 !important;
+  color: white !important;
+  border-radius: 5px !important;
+  height: 188px !important;
+}
+

@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import React from 'react';
 import Chart from 'react-apexcharts';
-import { Button, Card, Col, Form, ProgressBar, Row } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 
 
 const ImagePredictionScreen = () => {
@@ -88,16 +88,16 @@ const ImagePredictionScreen = () => {
         },
     });
     return (
-        <div>
+        <div className="test">
             <div className="p-2 d-flex flex-colunm">
                 <div className="d-flex flex-row">
                     <div className="pe-3">
                         <Card className='card-custom-border'>
-                            <Chart options={options} series={imageProbabilities} type="bar" height={500} width={670} />
+                            <Chart options={options} series={imageProbabilities} type="bar" height={500} width={600} />
                         </Card>
                     </div>
                 </div>
-                <Card className='card-custom-border' style={{ height: '520px' }}>
+                <Card className='card-custom-border' style={{ height: '519px', width: '478px' }}>
                     <Card.Header className="text-center result-title">Disease Diagnosis</Card.Header>
                     <div className="p-3">
                         <div className="result-container">

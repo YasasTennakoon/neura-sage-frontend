@@ -131,7 +131,7 @@ const MRIUplode = () => {
     };
 
     return (
-        <div>
+        <div className='test'>
             <div className='d-flex justify-content-start'>
                 <div>
                     <Card style={{ width: '70rem' }} className='card-custom-border'>

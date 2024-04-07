@@ -166,7 +166,7 @@ const PredictionScreen = () => {
     });
 
     return (
-        <div>
+        <div className="test">
             <div className="p-2">
                 <div className="d-flex flex-row">
                     <div className="pe-3">
@@ -188,7 +188,7 @@ const PredictionScreen = () => {
                     </div>
                 </div>
                 <div className="pt-3">
-                    <Card className='card-custom-border' style={{ height: '11.5rem' }}>
+                    <Card className='card-custom-border' style={{ height: '177px', width: '1100px' }}>
                         <Card.Header className="text-center result-title">Disease Diagnosis</Card.Header>
                         <div className="p-3">
                             <div className="result-container-both">
@@ -196,7 +196,7 @@ const PredictionScreen = () => {
                                     After detailed evaluation through advanced imaging and text analysis, the data suggest a pronounced likelihood of <span className="fw-bold">{finalDecision}</span> (AD). The bar graph distinctly shows a high probability of <span className="fw-bold">{highestProbability}</span>% for <span>{finalDecision}</span>, indicating a strong diagnostic leaning towards this category.
                                 </div>
                                 <div className="result-btn">
-                                    <Button className="select-btn" onClick={()=>onClickDiagnosis()}>Diagnosis</Button>
+                                    <Button className="select-btn" onClick={() => onClickDiagnosis()}>Diagnosis</Button>
                                     <Button className="select-btn" variant="success">Print Diagnosis Report</Button>
                                 </div>
                             </div>

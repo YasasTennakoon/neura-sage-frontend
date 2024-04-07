@@ -25,28 +25,9 @@ const RouteChangeListener = ({ onRouteChange }) => {
 };
 
 const MainComponent = () => {
-  const [pageTitle, setPageTitle] = useState();
-  const titles = {
-    "/": "Home",
-    "/home": "Home Page",
-    "/file-upload": "Uplode Brain MRI and Patient Information",
-    "/cognitive": "Cognitive Examination",
-    "/display_prediction": "Disease Diagnosis Results",
-    "/display_detection": "Disease Detection",
-    "/mri_uplode": "Uplode Brain MRI",
-    "/display_image_screen": "Disease Diagnosis Result"
-  };
-  const handleRouteChange = (location, navigate) => {
-    setPageTitle(titles[location.pathname]);
-
-  };
   return (
     <Router>
       <div className="main">
-        <div className="top-bar">
-          <div className="center-content tool-bar-title">{pageTitle}</div>
-          <RouteChangeListener onRouteChange={handleRouteChange} />
-        </div>
         <NavigationBar />
         <Routes>
           <Route path="/" element={<Navigate replace to="/home" />} />
