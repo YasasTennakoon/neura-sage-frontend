@@ -420,6 +420,7 @@ const FileUpload = () => {
                                                         <IoIosHelpCircle />
                                                     </span>
                                                 </OverlayTrigger>
+                                                <span style={{ color: 'red', fontSize: '12px' }}> *NOTE:MMSE score available through cognitive exam*</span>
                                                 <Form.Control
                                                     className='small-input'
                                                     type="number"
